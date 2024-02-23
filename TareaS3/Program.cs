@@ -1,23 +1,43 @@
-﻿String idioma;
+﻿double calificacion;
 
-Console.WriteLine("Ingrese el idioma de su preferencia (español/ingles/frances): ");
-idioma=Console.ReadLine().ToLower();
+Console.WriteLine("Ingrese su calificación: ");
+calificacion=Convert.ToDouble(Console.ReadLine());
 
-switch (idioma)
+if (calificacion == Math.Floor(calificacion))
 {
-    case "español":
-        Console.WriteLine("Hola, ¿Cómo te encuentras hoy?");
-        break;
+ 
+    switch (calificacion)
+    {
+        case double i when (i >= 95 && i <= 100):
+            Console.WriteLine("Has alcanzado una calificacion excepcional y eres elegible para recibir un reconocimiento.");
+            break;
 
-    case "ingles":
-        Console.WriteLine("Hello, How are you feeling today?");
-        break;
+        case double i when (i >= 86 && i <= 94):
+            Console.WriteLine("Has obtenido una calificacion sobresaliente en tu examen.");
+            break;
 
-    case "frances":
-        Console.WriteLine("Bonjour, Comment vas-tu aujourd'hui ?");
-        break;
+        case double i when (i >= 71 && i <= 85):
+            Console.WriteLine("Has aprobado el examen con una calificacion destacada.");
+            break;
 
-    default:
-        Console.WriteLine("El idioma ingresado no es válido.");
-        break;
+        case double i when (i >= 62 && i <= 70):
+            Console.WriteLine("Has alcanzado la nota suficiente para ser promovido al siguiente curso.");
+            break;
+
+        case double i when (i == 61):
+            Console.WriteLine("Has obtenido la calificación minima para aprobar el examen.");
+            break;
+
+        case double i when (i > 0 && i <= 60):
+            Console.WriteLine("Lamentablemente no has alcanzado la calificacion minima para aprobar el examen.");
+            break;
+
+        default:
+            Console.WriteLine("La calificacion ingresada no es valida.");
+            break;
+    }
+}
+else
+{
+    Console.WriteLine("La calificacion ingresada no es un entero.");
 }
