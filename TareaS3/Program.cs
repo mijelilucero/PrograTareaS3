@@ -1,16 +1,17 @@
-﻿Decimal precio, descuento=0.10m, preciofin;
+﻿String usuario, contrasena;
 
 try
 {
-    Console.WriteLine("Ingrese el precio original del producto: ");
-    precio = Convert.ToDecimal(Console.ReadLine());
+    Console.WriteLine("Ingrese el nombre de usuario: ");
+    usuario=Console.ReadLine();
 
-    if (precio>100){
-        preciofin = precio - (precio * descuento);
+    Console.WriteLine("Ingrese la contrasena: ");
+    contrasena=Console.ReadLine();
 
-        Console.WriteLine("El precio final es de: " + preciofin);
+    if (usuario=="usuario" && contrasena=="contraseña"){
+        Console.WriteLine("Credenciales correctas. Acceso permitido.");
     }else{
-        Console.WriteLine("El producto no aplica para descuento.");
+        Console.WriteLine("Usuario o contraseña incorrectos.");
     }
 }
 catch(Exception error)
