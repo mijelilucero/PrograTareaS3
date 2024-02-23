@@ -1,43 +1,27 @@
-﻿String dia;
-int numero=0;
+﻿String servicio;
+Decimal pago;
 
-Console.WriteLine("Ingrese un numero (1-7): ");
-numero=Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Ingrese el tipo de servicio (lavado de auto/cambio de aceite/revisión mecanica): ");
+servicio=Console.ReadLine().ToLower();
 
-switch (numero)
+switch (servicio)
 {
-    case 1:
-        dia = "lunes";
+    case "lavado de auto":
+        pago=75;
         break;
 
-    case 2:
-        dia = "martes";
+    case "cambio de aceite":
+        pago = 250;
         break;
 
-    case 3:
-        dia = "miercoles";
-        break;
-
-    case 4:
-        dia = "jueves";
-        break;
-
-    case 5:
-        dia = "viernes";
-        break;
-
-    case 6:
-        dia = "sabado";
-        break;
-
-    case 7:
-        dia = "domingo";
+    case "revision mecanica":
+        pago = 500;
         break;
 
     default:
-        Console.WriteLine("El numero ingresado esta fuera del rango especificado.");
-        dia = "ninguno";
+        Console.WriteLine("El servicio ingresado no esta disponible.");
+        pago = 0;
         break;
 }
 
-Console.WriteLine("El dia correspondiente al numero ingresado es: " + dia);
+Console.WriteLine("El pago por el servicio de {0} es de: Q.{1}",servicio, pago);
