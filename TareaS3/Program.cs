@@ -1,37 +1,31 @@
-﻿String figura;
-Double bas, altura, lado, radio, area=0;
-const double Pi = 3.14159;
+﻿String numero;
 
-try
+Console.WriteLine("Ingrese el numero en letras (1-5): ");
+numero=Console.ReadLine().ToLower();
+
+switch (numero)
 {
-    Console.WriteLine("Ingrese el tipo de figura geomética (triangulo/cuadrado/circulo): ");
-    figura=Console.ReadLine().ToLower();
+    case "uno":
+        Console.WriteLine("1");
+        break;
 
-    if (figura=="triangulo"){
-        Console.WriteLine("Ingrese la base: ");
-        bas = Convert.ToDouble(Console.ReadLine());
+    case "dos":
+        Console.WriteLine("2");
+        break;
 
-        Console.WriteLine("Ingrese la altura: ");
-        altura = Convert.ToDouble(Console.ReadLine());
+    case "tres":
+        Console.WriteLine("3");
+        break;
 
-        area = (bas * altura) / 2;
-    }else if (figura=="cuadrado"){
-        Console.WriteLine("Ingrese el lado: ");
-       lado = Convert.ToDouble(Console.ReadLine());
+    case "cuatro":
+        Console.WriteLine("4");
+        break;
 
-        area = lado*lado;
-     }else if (figura == "circulo"){
-        Console.WriteLine("Ingrese el radio: ");
-        radio = Convert.ToDouble(Console.ReadLine());
+    case "cinco":
+        Console.WriteLine("5");
+        break;
 
-        area = Pi*(radio*radio);
-    }else{
-        Console.WriteLine("Figura geométrica no valida.");
-    }
-
-    Console.WriteLine("El area del {0} es de: {1}",figura, area);
-}
-catch(Exception error)
-{
-    Console.WriteLine("Ha ocurrido un error: " + error.Message);
+    default:
+        Console.WriteLine("El numero ingresado esta fuera del rango especificado.");
+        break;
 }
