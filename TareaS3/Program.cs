@@ -1,14 +1,16 @@
-﻿int edad;
+﻿Decimal precio, descuento=0.10m, preciofin;
 
 try
 {
-    Console.WriteLine("Ingrese su edad: ");
-   edad = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Ingrese el precio original del producto: ");
+    precio = Convert.ToDecimal(Console.ReadLine());
 
-    if (edad>=18){
-        Console.WriteLine("Edad adecuada. Ingreso al club permitido.");
+    if (precio>100){
+        preciofin = precio - (precio * descuento);
+
+        Console.WriteLine("El precio final es de: " + preciofin);
     }else{
-        Console.WriteLine("No alcanza la edad mínima requerida. Ingreso al club NO permitido.");
+        Console.WriteLine("El producto no aplica para descuento.");
     }
 }
 catch(Exception error)
