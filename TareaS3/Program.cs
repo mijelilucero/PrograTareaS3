@@ -1,14 +1,18 @@
-﻿int num;
+﻿Decimal monto;
+int edad;
 
 try
 {
-    Console.WriteLine("Ingrese el numero: ");
-    num=Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Ingrese el monto del prestamo: ");
+    monto=Convert.ToDecimal(Console.ReadLine());
 
-    if (num%2==0){
-        Console.WriteLine("El numero es PAR.");
+    Console.WriteLine("Ingrese su edad: ");
+    edad = Convert.ToInt32(Console.ReadLine());
+
+    if (monto<5000||edad>60){
+        Console.WriteLine("Solicitud de prestamo aprobada.");
     }else{
-        Console.WriteLine("EL numero es IMPAR.");
+        Console.WriteLine("Solicitud de prestamo rechazada.");
     }
 }
 catch(Exception error)
