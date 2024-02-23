@@ -1,17 +1,14 @@
-﻿String usuario, contrasena;
+﻿int num;
 
 try
 {
-    Console.WriteLine("Ingrese el nombre de usuario: ");
-    usuario=Console.ReadLine();
+    Console.WriteLine("Ingrese el numero: ");
+    num=Convert.ToInt32(Console.ReadLine());
 
-    Console.WriteLine("Ingrese la contrasena: ");
-    contrasena=Console.ReadLine();
-
-    if (usuario=="usuario" && contrasena=="contraseña"){
-        Console.WriteLine("Credenciales correctas. Acceso permitido.");
+    if (num%2==0){
+        Console.WriteLine("El numero es PAR.");
     }else{
-        Console.WriteLine("Usuario o contraseña incorrectos.");
+        Console.WriteLine("EL numero es IMPAR.");
     }
 }
 catch(Exception error)
