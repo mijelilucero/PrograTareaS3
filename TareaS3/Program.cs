@@ -1,27 +1,23 @@
-﻿String servicio;
-Decimal pago;
+﻿String idioma;
 
-Console.WriteLine("Ingrese el tipo de servicio (lavado de auto/cambio de aceite/revisión mecanica): ");
-servicio=Console.ReadLine().ToLower();
+Console.WriteLine("Ingrese el idioma de su preferencia (español/ingles/frances): ");
+idioma=Console.ReadLine().ToLower();
 
-switch (servicio)
+switch (idioma)
 {
-    case "lavado de auto":
-        pago=75;
+    case "español":
+        Console.WriteLine("Hola, ¿Cómo te encuentras hoy?");
         break;
 
-    case "cambio de aceite":
-        pago = 250;
+    case "ingles":
+        Console.WriteLine("Hello, How are you feeling today?");
         break;
 
-    case "revision mecanica":
-        pago = 500;
+    case "frances":
+        Console.WriteLine("Bonjour, Comment vas-tu aujourd'hui ?");
         break;
 
     default:
-        Console.WriteLine("El servicio ingresado no esta disponible.");
-        pago = 0;
+        Console.WriteLine("El idioma ingresado no es válido.");
         break;
 }
-
-Console.WriteLine("El pago por el servicio de {0} es de: Q.{1}",servicio, pago);
